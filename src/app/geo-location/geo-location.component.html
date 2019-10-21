@@ -1,0 +1,58 @@
+
+
+<div class="content" role="main">
+     <h2>Show Location On The Basis Of IP</h2>
+     <div class="card-container">
+             <form (submit)="GetGeoIPDetails()">
+                     Get Geo Location Of IP for 
+                      <input [(ngModel)]="IpAddress" name="tweet" placeholder="Enter IP" autocomplete="off">
+                      <span>    <button type="submit">Get Location Detail</button></span>
+                   </form>
+                   <div class="content" *ngIf="InvalidIP">
+                         <span>  <h2>Please enter valid IP to get geo location details.</h2></span>
+                       </div>    
+                 
+                       <div class="content" style="position: absolute;top:30%" *ngIf="GeoLocationDetails">
+                        <span>  <h2>Find the Geo Location details of the IP  specified</h2></span>
+                    
+       
+                             <table class="table table-bordered">
+                               <thead>
+                                 <tr>
+                                   <th>City</th>
+                                   <th>Continent Code</th>
+                                   <th>Continent Name</th>
+                                   <th>Country Code</th>
+                                   <th>Country Name</th>
+                                   <th>IP</th>
+                                   <th>Latitude</th>
+                                   <th>Longitude</th>
+                                   <th>Region Code</th>
+                                   <th>Region Name</th>
+                                   <th>Type</th>
+                                   <th>Zip</th>
+                                 </tr>
+                               </thead>
+                               <tbody>
+                                 <tr>
+                                   <td>{{GeoLocationDetails.city}}</td>
+                                   <td>{{GeoLocationDetails.continent_code}}</td>
+                                   <td>{{GeoLocationDetails.continent_name}}</td>
+                                   <td>{{GeoLocationDetails.country_code}}</td>
+                                   <td>{{GeoLocationDetails.country_name}}</td>
+                                   <td>{{GeoLocationDetails.ip}}</td>
+                                   <td>{{GeoLocationDetails.latitude}}</td>
+                                   <td>{{GeoLocationDetails.longitude}}</td>
+                                   <td>{{GeoLocationDetails.region_code}}</td>
+                                   <td>{{GeoLocationDetails.region_name}}</td>
+                                   <td>{{GeoLocationDetails.type}}</td>
+                                   <td>{{GeoLocationDetails.zip}}</td>
+                                 </tr>
+                               </tbody>
+                             </table>
+                  </div>
+               </div>
+         
+           
+
+</div>
